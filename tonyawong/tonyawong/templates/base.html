@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Tonya Wong {% endblock %}</title>
+    <!-- Favicon -->
+    <style>
+        body {
+            background-color: rgb(42, 42, 42);
+            color: #FFFFFF;
+            font-family: sans-serif, Verdana;
+            font-size: 15px;
+            line-height: 1.5;
+            padding-left: 20px;
+        }
+
+        a {
+            color: #AAAAAA;
+            text-decoration: none;
+            transition: color 1s;
+        }
+
+        a:hover, .active, #mail {
+            color: #FFFFFF;
+        }
+
+        img.item {
+            -webkit-filter: brightness(100%);
+	        -moz-filter: brightness(100%);
+	        -o-filter: brightness(100%);
+	        -ms-filter: brightness(100%);
+	        filter: brightness(100%);
+            transition: all 1s;
+
+            width: 33%;
+        }
+
+        img.item:hover{
+            -webkit-filter: brightness(50%);
+	        -moz-filter: brightness(50%);
+	        -o-filter: brightness(50%);
+	        -ms-filter: brightness(50%);
+	        filter: brightness(50%);
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            display: inline;
+        }
+
+        footer {
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tonya Wong Jewellery</h1>
+        <nav>
+            <ul> <!-- Link references -->
+                {% block collection_link %}<li>{% endblock %}<a href="/collection/">Collection</a></li>
+                <li><a href="/collection/rings/">Rings</a></li>
+                <li><a href="/collection/necklaces/">Necklaces</a></li>
+                <li><a href="/collection/bracelets/">Bracelets</a></li>
+                <li><a href="/collection/earrings/">Earrings</a></li>
+                <li><a href="/collection/miscellaneous/">Miscellaneous</a></li>
+                {% block about_link %}<li>{% endblock %}<a href="/about/">About</a></li>
+                <!-- More links - e.g. Contact email form -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    {% block content %}
+    <!-- Page contents -->
+    {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; Tonya Wong 2017<br/> <!-- copyright details -->
+           Code and design: Aiden Tsen<br/> <!-- Ask mother if this is acceptable -->
+           <a data-auto-recognition="true" href="mailto:info@tonyawong.com" data-type="mail" id="mail">info@tonyawong.com</a></p>
+        <!-- links -->
+        <!-- social media -->
+    </footer>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} TONYA WONG - {{ item_type|capfirst }} {% endblock %}
+
+<!-- Set the class of the collection tab to active -->
+{% block collection_link %}<li class="active">{% endblock %}
+
+{% block content %}
+    <!-- Displays all items from the item list for the page -->
+    {% if item_list %}
+        <ul>
+            {% for item in item_list %}
+                <li>
+                    <a href="{{ item.link }}"><img class="item" src="{{ item.get_image_link }}" alt="{{ item.item_name }}"/></a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>This page does not exist.</p> <!-- Placeholder message, replace later -->
+    {% endif %}
+{% endblock %}
